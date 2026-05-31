@@ -1,387 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>VIP Prediction</title>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1335856621732984');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1335856621732984&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Insights Channel</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    background:#070707;
-    color:white;
-    overflow-x:hidden;
+    background:#000;
+    color:#fff;
+    text-align:center;
+    min-height:100vh;
 }
 
 .container{
-    max-width:430px;
+    max-width:500px;
     margin:auto;
-    min-height:100vh;
-    padding:25px 18px 40px;
-    position:relative;
+    padding:40px 20px;
 }
 
-/* GRID BACKGROUND */
-
-.container::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background-image:
-    linear-gradient(rgba(255,215,0,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,215,0,0.08) 1px, transparent 1px);
-    background-size:35px 35px;
-    z-index:-1;
-}
-
-/* PROFILE */
-
-.profile-wrap{
+.logo{
+    width:240px;
+    height:240px;
+    margin:30px auto;
+    border-radius:50%;
+    border:4px solid #ffd700;
     display:flex;
+    align-items:center;
     justify-content:center;
+    background:radial-gradient(circle,#222,#000);
+    box-shadow:0 0 35px #ffd700;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+h1{
+    font-size:48px;
+    line-height:1.15;
+    font-weight:800;
     margin-top:20px;
 }
 
-.profile-ring{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    padding:6px;
-    background:linear-gradient(135deg,#ffd900,#ffae00,#ffd900);
-    box-shadow:
-    0 0 15px #ffd000,
-    0 0 40px rgba(255,208,0,0.4);
+.subtitle{
+    color:#ffd700;
+    font-size:24px;
+    margin:25px 0;
+    line-height:1.5;
 }
 
-.profile-ring img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:50%;
-    border:5px solid #0b0b0b;
-}
-
-/* TEXT */
-
-.heading{
-    text-align:center;
-    margin-top:28px;
-}
-
-.heading h1{
-    font-size:42px;
-    line-height:1.1;
-    font-weight:800;
-    background:linear-gradient(to right,#ffd900,#fff3a0,#ffbf00);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.heading p{
-    margin-top:14px;
-    letter-spacing:6px;
-    font-size:13px;
-    color:#ffd95c;
-}
-
-/* BUTTON */
-
-.telegram-btn{
-    width:100%;
-    height:74px;
-    border:none;
-    border-radius:24px;
-    margin-top:40px;
-    font-size:18px;
+.join-text{
+    color:#ffd700;
+    font-size:28px;
     font-weight:700;
-    color:#111;
-    cursor:pointer;
-    background:linear-gradient(135deg,#ffe600,#ffb300);
-    box-shadow:
-    0 10px 30px rgba(255,208,0,0.3),
-    0 0 18px rgba(255,208,0,0.5);
-    transition:0.3s;
+    margin-top:25px;
 }
 
-.telegram-btn:hover{
-    transform:scale(1.02);
+.arrow{
+    color:#ffd700;
+    font-size:40px;
+    margin:15px 0;
 }
 
-.telegram-btn a{
-    text-decoration:none;
-    color:#111;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
+.btn{
+    display:block;
     width:100%;
-    height:100%;
+    background:#ffd700;
+    color:#000;
+    text-decoration:none;
+    font-size:34px;
+    font-weight:800;
+    padding:28px;
+    border-radius:70px;
+    box-shadow:0 0 30px #ffd700;
+    margin-top:15px;
 }
 
-.telegram-icon{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    background:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.trust{
+    margin-top:35px;
+    color:#ffd700;
+    font-size:24px;
+    font-weight:700;
+}
+
+.info{
+    margin-top:12px;
+    color:#bdbdbd;
     font-size:22px;
 }
 
-/* ACCURACY */
-
-.accuracy{
-    text-align:center;
-    margin-top:22px;
-    color:#ffd54a;
-    font-size:14px;
-    letter-spacing:3px;
+.glow{
+    position:fixed;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:450px;
+    height:450px;
+    background:#ffd700;
+    opacity:.15;
+    filter:blur(130px);
+    z-index:-1;
 }
 
-/* STATS */
+@media(max-width:600px){
 
-.stats{
-    margin-top:35px;
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    background:#120d00;
-    border:1px solid rgba(255,215,0,0.15);
-    border-radius:24px;
-    padding:28px 10px;
+h1{
+    font-size:28px;
 }
 
-.stat{
-    flex:1;
-    text-align:center;
-    border-right:1px solid rgba(255,215,0,0.12);
+.subtitle{
+    font-size:18px;
 }
 
-.stat:last-child{
-    border-right:none;
+.btn{
+    font-size:24px;
+    padding:20px;
 }
 
-.stat h2{
-    font-size:30px;
-    color:#ffe066;
-}
-
-.stat p{
-    margin-top:10px;
-    font-size:13px;
-    color:#c7b25a;
-    letter-spacing:2px;
-}
-
-/* CARDS */
-
-.cards{
-    margin-top:30px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
-
-.card{
-    background:#120d00;
-    border-radius:28px;
-    padding:28px 20px;
-    border:1px solid rgba(255,215,0,0.12);
-    min-height:210px;
-    box-shadow:0 0 20px rgba(255,208,0,0.05);
-}
-
-.icon{
-    width:75px;
-    height:75px;
-    border-radius:50%;
-    background:rgba(255,208,0,0.08);
-    border:1px solid rgba(255,208,0,0.2);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:34px;
-    color:#ffd54a;
-    margin-bottom:22px;
-}
-
-.card h3{
-    font-size:19px;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#bbb;
-    line-height:1.5;
-    font-size:14px;
-}
-
-/* BIG CARD */
-
-.big-card{
-    margin-top:20px;
-    background:#120d00;
-    border-radius:28px;
-    padding:28px;
-    border:1px solid rgba(255,215,0,0.12);
-}
-
-.big-top{
-    display:flex;
-    gap:18px;
-}
-
-.big-card h2{
-    font-size:32px;
-    margin-bottom:12px;
-}
-
-.big-card p{
-    color:#bbb;
-    line-height:1.7;
-    font-size:15px;
-}
-
-/* MOBILE */
-
-@media(max-width:450px){
-
-.heading h1{
-    font-size:34px;
-}
-
-.telegram-btn{
-    font-size:16px;
-}
-
-.stats{
-    padding:22px 5px;
-}
-
-.stat h2{
-    font-size:25px;
+.logo{
+    width:180px;
+    height:180px;
 }
 
 }
 </style>
 </head>
-
 <body>
+
+<div class="glow"></div>
 
 <div class="container">
 
-    <!-- PROFILE -->
-    <div class="profile-wrap">
-        <div class="profile-ring">
-            <!-- IMAGE CHANGE HERE -->
-            <img src="https://www.image2url.com/r2/default/images/1778133549427-b4710ca9-e9c8-4fd7-b812-2f99c386f2f4.jpg" alt="">
-        </div>
+    <div class="logo">
+        <!-- APNI IMAGE LINK YA FILE -->
+        <img src="https://www.image2url.com/r2/default/images/1780190136595-e38dd325-7259-44d1-922a-c1ce23cc0083.jpg" alt="">
     </div>
 
-    <!-- HEADING -->
-    <div class="heading">
-        <h1>13L VIP SIGNAL<br> </h1>
-        <p>ULTIMATE PREDICTION KING</p>
+    <h1>
+        Join Our Private<br>
+       𝐑𝐀𝐃𝐇𝐄 𝐗 𝐄𝐌𝐏𝐈𝐑𝐄 🥷
+    </h1>
+
+    <p class="subtitle">
+        Get daily updates, trend insights & community discussions
+    </p>
+
+    <div class="join-text">
+        👇 Click here to join!
     </div>
 
-    <!-- BUTTON -->
-    <button class="telegram-btn">
+    <div class="arrow">⌄</div>
 
-        <!-- TELEGRAM LINK CHANGE HERE -->
-        <a href="https://t.me/+5UoHcdMn_WUwYjI1" target="_blank">
+    <!-- APNA TELEGRAM LINK YAHA DALNA -->
+    <a href="https://t.me/+0P9Ath5bL3Q2Mjll" class="btn">
+        🚀 Join Telegram Now
+    </a>
 
-            <div class="telegram-icon">✈</div>
-
-            JOIN FREE VIP CHANNEL
-
-        </a>
-    </button>
-
-    <!-- ACCURACY -->
-    <div class="accuracy">
-        ⚡ 99% ACCURACY GUARANTEED
+    <div class="trust">
+        ⭐ Trusted by 1,000+ active members
     </div>
 
-    <!-- STATS -->
-    <div class="stats">
-
-        <div class="stat">
-            <h2>99%</h2>
-            <p>WIN RATE</p>
-        </div>
-
-        <div class="stat">
-            <h2>5-Min</h2>
-            <p>WITHDRAWAL</p>
-        </div>
-
-        <div class="stat">
-            <h2>5 Times</h2>
-            <p>SESSIONS</p>
-        </div>
-
-    </div>
-
-    <!-- CARDS -->
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">💰</div>
-            <h3>DAILY PROFIT</h3>
-            <p>Small Invest, 9X Return</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🏆</div>
-            <h3>SURE SHOT</h3>
-            <p>Verified Winning Signals</p>
-        </div>
-
-    </div>
-
-    <!-- BIG CARD -->
-    <div class="big-card">
-
-        <div class="big-top">
-
-            <div class="icon">👛</div>
-
-            <div>
-                <h2>Elite Money Management</h2>
-
-                <p>
-                    Follow our secret 3-level and 9-level plans to ensure
-                    you never lose your capital.
-                </p>
-            </div>
-
-        </div>
-
+    <div class="info">
+        100% Free &nbsp; | &nbsp; No Spam &nbsp; | &nbsp; Instant Updates
     </div>
 
 </div>
